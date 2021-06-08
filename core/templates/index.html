@@ -1,0 +1,33 @@
+{% load static %}
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+    <h1>Hello, I am {{ name }} from {{ my_team }} (class based view)</h1>
+    <h2>I am learning Django</h2>
+
+    <h3>My favorite food</h3>
+    <ol>
+        <li>{{ food1 }}</li>
+        <li>{{ food2 }}</li>
+        <li>{{ food3 }}</li>
+    </ol>
+
+    <p>Created by {{ profile }}</p>
+
+    <div>
+        <p>Subscribe Me:</p>
+        <form action="." method="POST">
+            {% csrf_token %}
+            <!-- <input text="text" name="email" /> -->
+            {{ form.email }}
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</body>
+
+</html>
