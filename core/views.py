@@ -5,6 +5,7 @@ from django.views import View
 from core.models import Profile, Email
 from core.forms import SubscriberForm
 
+
 # Create your views here.
 def index(request):
     html = """

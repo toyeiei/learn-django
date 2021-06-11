@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from core.models import Profile
 
+
 class Command(BaseCommand):
     help = 'This is a command to show my profile'
 
@@ -9,10 +10,10 @@ class Command(BaseCommand):
         # parser.add_argument('name', nargs=1, type=str)
 
     def handle(self, *args, **options):
-        try: 
+        try:
             id = options.get("id")[0]
             print(id)
-            profile = Profile.objects.get(id = id)
+            profile = Profile.objects.get(id=id)
             print(profile.name)
-        except:
+        except CommandError:
             raise CommandError("Error!")
