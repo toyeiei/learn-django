@@ -3,7 +3,7 @@ from core.models import Profile
 
 
 class Command(BaseCommand):
-    help = 'This is a command to show my profile'
+    help = "This is a command to show my profile"
 
     def add_arguments(self, parser):
         parser.add_argument('id', nargs=1, type=int)
